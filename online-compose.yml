@@ -1,0 +1,33 @@
+version: '3'
+services:
+  db:
+    image: postgres:${POSTGRES_VERSION}
+    container_name: ${DB_CONTAINER_NAME}
+    restart: always
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_db_datas:/var/lib/postgresql/data
+  odoo:
+    image: odoo:${ODOO_VERSION}
+    container_name: ${ODOO_CONTAINER_NAME}
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - ${ODOO_PORT}:8069
+    volumes:
+      - odoo_web_datas:/var/lib/odoo
+      - ${CONFIG_PATH}:/etc/odoo/
+      - ./:/mnt/extra-addons
+      - ${ENTREPRISE_ADDONS}:/mnt/entreprise-addons
+      - ./requirements.txt:/mnt/requirements.txt:ro
+    # command: -i base
+    # command: sh -c "pip install -r /mnt/requirements.txt && odoo -i base -u all"
+    command: sh -c "pip install -r /mnt/requirements.txt && odoo -i base"
+
+volumes:
+  odoo_web_datas:
+  postgres_db_datas:
