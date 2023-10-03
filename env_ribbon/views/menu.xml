@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_ribbon" name="" web_icon="env_ribbon,static/description/icon.png" sequence="1"/>
+</odoo>
