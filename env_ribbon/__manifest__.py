@@ -9,6 +9,7 @@
         Le ruban d'environnement est une alerte indiquant à l'utilisateur l'environnement sur lequel celui-ci se trouve.
     """,
 
+    "sequence": "-200",
     'version': '0.1',
     'author': "ELYDEV",
     'website': "https://www.progistack.com",
@@ -32,6 +33,6 @@
     },
 
     'installable': True,
-    'application': False,
+    'application': True,
     'auto_install': True,
 }
