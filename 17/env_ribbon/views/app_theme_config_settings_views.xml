@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="view_app_theme_config_settings" model="ir.ui.view">
+			<field name="name">res.config.settings.view.form.inherit.env_ribbon</field>
+			<field name="model">res.config.settings</field>
+			<field name="priority">20</field>
+			<field name="inherit_id" ref="base.res_config_settings_view_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//form" position="inside">
+					<app data-string="env_ribbon" string="Ruban" data-key="env_ribbon" name="env_ribbon">
+						<h2>Configuration du ruban</h2>
+						<div class="row mt16 o_settings_container" name="app_ui_config">
+							<group string="CONTENU DU MENU UTILISATEUR">
+								<label for="app_ribbon_name"/>
+								<div>
+									<field name="app_ribbon_name"/>
+									<div>
+										<span>Définir la valeur sur <b>"False"</b> pour masquer le ruban</span>
+									</div>
+								</div>
+
+								<label for="app_ribbon_color"/>
+								<div>
+									<field name="app_ribbon_color"/>
+								</div>
+
+								<label for="app_ribbon_background_color"/>
+								<div>
+									<field name="app_ribbon_background_color"/>
+								</div>
+							</group>
+						</div>
+					</app>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

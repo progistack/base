@@ -1,0 +1,35 @@
+
+header:hover ~ .env-ribbon,
+nav:hover ~ .env-ribbon {
+    /* Ease out ribbon when user is using the navigation in Odoo */
+    opacity: 0 !important;
+    transition: 0.2s ease !important;
+}
+
+.env-ribbon b {
+    font-size: 20px;
+}
+
+.env-ribbon {
+    text-align: center;
+    padding: 10px;
+    letter-spacing: 1px;
+    color: #FFFFFFFF;
+    z-index: 9999;
+    position: fixed;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background: #55AAFFFF;
+    pointer-events: none;
+}
+
+.env-ribbon-TR {
+    width: 300px;
+    top: 30px;
+    right: -100px;
+    line-height: 20px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}

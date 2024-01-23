@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<odoo>
+    <data noupdate="1">
+        <function model="ir.config_parameter" name="set_param" eval="('app_ribbon_name', 'DÉVELOPPEMENT')"/>
+        <function model="ir.config_parameter" name="set_param" eval="('app_ribbon_color', '#FFFFFFFF')"/>
+        <function model="ir.config_parameter" name="set_param" eval="('app_ribbon_background_color', '#55AAFFFF')"/>
+    </data>
+</odoo>
